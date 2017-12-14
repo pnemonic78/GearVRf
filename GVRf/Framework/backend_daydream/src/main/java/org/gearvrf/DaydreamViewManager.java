@@ -122,8 +122,10 @@ class DaydreamViewManager extends GVRViewManager {
         renderer.onDestroy();
         mGearController = null;
     }
-    void onDrawFrame(){
-        mGearController.onDrawFrame();
+    void onDrawFrame() {
+        if (mGearController != null) {
+            mGearController.onDrawFrame();
+        }
     }
     void onDrawEye(int eye) {
         if (cameraRig == null) {
