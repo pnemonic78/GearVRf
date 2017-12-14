@@ -13,12 +13,12 @@ repositories {
 
 android {
     publishNonDefault !gradle.getStartParameter().taskNames.contains('uploadArchives')
-    compileSdkVersion 21
-    buildToolsVersion '25.0.2'
+    compileSdkVersion 24
+    buildToolsVersion '26.0.3'
 
     defaultConfig {
         minSdkVersion 21
-        targetSdkVersion 21
+        targetSdkVersion 24
         externalNativeBuild {
             cmake {
                 arguments.add('-DANDROID_TOOLCHAIN=gcc')
