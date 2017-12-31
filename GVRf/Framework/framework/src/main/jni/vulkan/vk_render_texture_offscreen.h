@@ -1,5 +1,4 @@
-/*
- * Copyright 2016 Samsung Electronics Co., LTD
+/* Copyright 2015 Samsung Electronics Co., LTD
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,5 +12,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-include 'app'
 
+#include "vk_render_to_texture.h"
+
+#ifndef FRAMEWORK_VK_RENDER_TEXTURE_OFFSCREEN_H
+#define FRAMEWORK_VK_RENDER_TEXTURE_OFFSCREEN_H
+
+namespace gvr {
+    class VkRenderTextureOffScreen : public VkRenderTexture
+    {
+    public:
+        explicit VkRenderTextureOffScreen(int width, int height, int sample_count = 1);
+        void bind();
+        bool isReady();
+        bool readRenderResult(uint8_t **readback_buffer);
+    };
+
+}
+
+#endif //FRAMEWORK_VK_RENDER_TEXTURE_OFFSCREEN_H
